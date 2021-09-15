@@ -66,17 +66,17 @@ namespace TarjetasApp.Migrations
             migrationBuilder.InsertData(
                 table: "Persona",
                 columns: new[] { "IdPersona", "Apellido", "DNI", "Direccion", "Nombre" },
-                values: new object[] { 1, "Cheresky", "30303030", "Calle 123", "Ivan" });
+                values: new object[] { 1, "Asis", "36897458", "Osvaldo cruz", "Alex" });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "IdUsuario", "Nombre", "NombreUsuario", "Password" },
-                values: new object[] { 1, "Ivan", "Ivan", "Cheresky" });
+                values: new object[] { 1, "Alex", "Alex", "Asis" });
 
             migrationBuilder.InsertData(
                 table: "Tarjeta",
                 columns: new[] { "IdTarjeta", "IdPersona", "Limite", "Marca", "Nombre", "Numero", "Tasa", "Titular", "Vencimiento" },
-                values: new object[] { 1, 1, 100000L, 2, "Ivan", "00000000", 0.80000000000000004, "Ivan", new DateTime(2021, 8, 24, 20, 6, 57, 721, DateTimeKind.Local).AddTicks(3744) });
+                values: new object[] { 1, 1, 100000L, 2, "Alex", "00000000", 0.80000000000000004, "Alex", new DateTime(2021, 8, 24, 20, 6, 57, 721, DateTimeKind.Local).AddTicks(3744) });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

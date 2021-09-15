@@ -54,10 +54,10 @@ namespace TarjetasApp.Migrations
                         new
                         {
                             IdPersona = 1,
-                            Apellido = "Cheresky",
-                            DNI = "30303030",
+                            Apellido = "Asis",
+                            DNI = "36789456",
                             Direccion = "Calle 123",
-                            Nombre = "Ivan"
+                            Nombre = "Alex"
                         });
                 });
 
@@ -111,10 +111,10 @@ namespace TarjetasApp.Migrations
                             IdPersona = 1,
                             Limite = 100000L,
                             Marca = 2,
-                            Nombre = "Ivan",
+                            Nombre = "Alex",
                             Numero = "00000000",
                             Tasa = 0.80000000000000004,
-                            Titular = "Ivan",
+                            Titular = "Alex",
                             Vencimiento = new DateTime(2021, 8, 24, 21, 29, 14, 115, DateTimeKind.Local).AddTicks(136)
                         });
                 });
@@ -149,9 +149,9 @@ namespace TarjetasApp.Migrations
                         new
                         {
                             IdUsuario = 1,
-                            Nombre = "Ivan",
-                            NombreUsuario = "Ivan",
-                            Password = "Cheresky"
+                            Nombre = "Alex",
+                            NombreUsuario = "Alex",
+                            Password = "Asis"
                         });
                 });
 
