@@ -19,11 +19,11 @@ Se deberá dar de alta la tarjeta de crédito para ello deberá insertarse en la
 Los datos de la persona a insertar son id,nombre,apellido,dirección,tarjeta,dni de la tabla personas
  
 Crea los objetos correspondiente que respeten la siguiente funcionalidad.
-     * :godmode:  a)                    Invocar un método que devuelva toda la información de una tarjeta
-     * :godmode: b)                    Informar si una operación es valida
-     * :godmode:  c)                    Informar si una tarjeta es válida para opera
-     * :godmode:  d)                    Identificar si una tarjeta es distinta a otra
-     * :godmode:  e)                    Obtener por medio de un método la tasa de una operación informando marca e importe
+     * :godmode:a)                    Invocar un método que devuelva toda la información de una tarjeta
+     * :godmode:b)                    Informar si una operación es valida
+     * :godmode:c)                    Informar si una tarjeta es válida para opera
+     * :godmode:d)                    Identificar si una tarjeta es distinta a otra
+     * :godmode:e)                    Obtener por medio de un método la tasa de una operación informando marca e importe
 Los datos deben ser cargados por el responsable de cuenta
  
 ### Parte 2
