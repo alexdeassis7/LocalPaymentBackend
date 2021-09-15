@@ -24,7 +24,7 @@ namespace TarjetasApp.Controllers
         }
 
 
-        // GET: api/Usuarios/5
+        // OBTENER: api/Usuarios/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
@@ -38,7 +38,7 @@ namespace TarjetasApp.Controllers
             return usuario;
         }
 
-        // PUT: api/Usuarios/5
+        // ACTUALIZAR: api/Usuarios/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
@@ -70,7 +70,7 @@ namespace TarjetasApp.Controllers
         }
 
         //dar de alta usuario
-        // POST: api/Usuarios
+        // INSERTAR: api/Usuarios
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
@@ -81,7 +81,7 @@ namespace TarjetasApp.Controllers
             return CreatedAtAction("GetUsuario", new { id = usuario.IdUsuario }, usuario);
         }
 
-        // DELETE: api/Usuarios/5
+        // BORRAR : api/Usuarios/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario(int id)
         {

@@ -24,21 +24,9 @@ namespace TarjetasApp.Controllers
             _context = context;
         }
 
-        // Invocar un método que devuelva toda la información de una tarjeta
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Tarjeta>> GetTarjeta(int id)
-        {
-            var tarjeta = await _context.Tarjeta.FindAsync(id);
+     
 
-            if (tarjeta == null)
-            {
-                return NotFound();
-            }
-
-            return tarjeta;
-        }
-
-        // PUT: api/Tarjetas/5
+        // ACTUALIZAR: api/Tarjetas/{id}
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTarjeta(int id, Tarjeta tarjeta)
@@ -69,7 +57,7 @@ namespace TarjetasApp.Controllers
             return NoContent();
         }
 
-        // POST: api/Tarjetas
+        // INSERTAR: api/Tarjetas
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Tarjeta>> PostTarjeta(Tarjeta tarjeta)
@@ -80,7 +68,7 @@ namespace TarjetasApp.Controllers
             return CreatedAtAction("GetTarjeta", new { id = tarjeta.IdTarjeta }, tarjeta);
         }
 
-        // DELETE: api/Tarjetas/5
+        // BORRAR: api/Tarjetas/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTarjeta(int id)
         {
@@ -101,11 +89,25 @@ namespace TarjetasApp.Controllers
             return _context.Tarjeta.Any(e => e.IdTarjeta == id);
         }
 
-        //todas las tarjetas que una persona ha solicitado
+        //todas las tarjetas que una persona fue solicitando
         [HttpGet("DePersona/{IdPersona}")]
         public async Task<ActionResult<IEnumerable<Tarjeta>>> GetTarjetas(int IdPersona)
         {
             return await _context.Tarjeta.Where(x => x.IdPersona == IdPersona).ToListAsync();
+        }
+
+           // Invocar un método que devuelva toda la información de una tarjeta
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Tarjeta>> GetTarjeta(int id)
+        {
+            var tarjeta = await _context.Tarjeta.FindAsync(id);
+
+            if (tarjeta == null)
+            {
+                return NotFound();
+            }
+
+            return tarjeta;
         }
 
         //todas las tarjetas
@@ -115,19 +117,21 @@ namespace TarjetasApp.Controllers
             return await _context.Tarjeta.ToListAsync();
         }
 
-        //Informar si una operación es valida
-        [HttpGet("OperacionValida/{amount}")]
-        public ActionResult<bool> TransactionIsValid(double amount)
-        {
-            return TransactionHelpers.IsTransactionValid(amount);
-        }
+      
 
-        //Informar si una tarjeta es válida para opera
+        //ver si una tarjeta puede operar
         [HttpGet("CardIsValid/{id}")]
         public async Task<ActionResult<bool>> CardIsValid(int id)
         {
             var tarjeta = await _context.Tarjeta.FindAsync(id);
             return TarjetaHelpers.IsTarjetaValid(tarjeta);
+        }
+
+          //ver si una operación es valida
+        [HttpGet("OperacionValida/{amount}")]
+        public ActionResult<bool> TransactionIsValid(double amount)
+        {
+            return TransactionHelpers.IsTransactionValid(amount);
         }
 
     }

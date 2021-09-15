@@ -23,14 +23,43 @@ namespace TarjetasApp.Controllers
             _context = context;
         }
 
-        // GET: api/Personas
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Persona>>> GetPersonas()
+
+  // INSERTAR: api/Personas
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Persona>> PostPersona(Persona persona)
         {
-            return await _context.Persona.ToListAsync();
+            _context.Persona.Add(persona);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetPersona", new { id = persona.IdPersona }, persona);
         }
 
-        // GET: api/Personas/5
+        
+         // BORRAR: api/Personas/{id}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePersona(int id)
+        {
+            var persona = await _context.Persona.FindAsync(id);
+            if (persona == null)
+            {
+                return NotFound();
+            }
+
+            _context.Persona.Remove(persona);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+
+
+
+
+
+
+
+        // OBTENER: api/Personas/2
         [HttpGet("{id}")]
         public async Task<ActionResult<Persona>> GetPersona(int id)
         {
@@ -44,7 +73,7 @@ namespace TarjetasApp.Controllers
             return persona;
         }
 
-        // PUT: api/Personas/5
+        // EDITAR: api/Personas/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPersona(int id, Persona persona)
@@ -75,33 +104,16 @@ namespace TarjetasApp.Controllers
             return NoContent();
         }
 
-        // POST: api/Personas
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Persona>> PostPersona(Persona persona)
-        {
-            _context.Persona.Add(persona);
-            await _context.SaveChangesAsync();
+      
 
-            return CreatedAtAction("GetPersona", new { id = persona.IdPersona }, persona);
+        // GET: api/Personas
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Persona>>> GetPersonas()
+        {
+            return await _context.Persona.ToListAsync();
         }
 
-        // DELETE: api/Personas/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePersona(int id)
-        {
-            var persona = await _context.Persona.FindAsync(id);
-            if (persona == null)
-            {
-                return NotFound();
-            }
-
-            _context.Persona.Remove(persona);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
+      
         private bool PersonaExists(int id)
         {
             return _context.Persona.Any(e => e.IdPersona == id);
