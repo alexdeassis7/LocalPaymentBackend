@@ -41,5 +41,6 @@ El despliegue de la aplicación se debe generar via Docker o Docker-Compose  / k
 ### Extras
 Al momento de la entrega, deberá enviarnos el repositorio, github, bitbucket, gitlab, etc, se valora diagramas de clase, flujo etc
 
- 
+### Swagger
+<img align="left" width="400" src="https://github.com/alexdeassis7/LocalPaymentBackend/blob/main/CardsAppBackEnd/5257dc04-aaef-4771-ae59-d0d49c4fbf2b.jpg">
 
