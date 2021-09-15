@@ -28,31 +28,31 @@ namespace TarjetasApp.Data
             modelBuilder.Entity<Usuario>().HasData(new Usuario()
             {
                 IdUsuario = 1,
-                Nombre = "Ivan",
-                NombreUsuario = "Ivan",
-                Password = "Cheresky"
+                Nombre = "Alex",
+                NombreUsuario = "Alex",
+                Password = "asis"
             });
 
             modelBuilder.Entity<Tarjeta>().HasData(new Tarjeta()
             {
                 IdTarjeta = 1,
                 IdPersona = 1,
-                Nombre = "Ivan",
+                Nombre = "Alex",
                 Numero = "00000000",
                 Limite = 100000,
                 Marca = Marca.PERE,
                 Tasa = tasaCalculator.CalcularTasaPorcentual(Marca.PERE, DateTime.Now),
-                Titular = "Ivan",
+                Titular = "Alex",
                 Vencimiento = DateTime.Now
             });
 
             modelBuilder.Entity<Persona>().HasData(new Persona()
             {
                 IdPersona = 1,
-                Nombre = "Ivan",
-                Apellido = "Cheresky",
-                Direccion = "Calle 123",
-                DNI = "30303030"
+                Nombre = "Alex",
+                Apellido = "asis",
+                Direccion = "Osvaldo Cruz",
+                DNI = "36869485"
             });
         }
     }
