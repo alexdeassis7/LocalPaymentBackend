@@ -1,13 +1,13 @@
 # LocalPaymentBackend
 
 Se ha solicitado el diseño de un sistema para procesar operaciones con tarjetas de crédito para una organización. Dicho sistema debe disponer de un módulo que permita con las siguientes consideraciones desarrollar un aplicativo:
-Una tarjeta se identifica de acuerdo a la marca, número de tarjeta, cardholder y fecha de vencimiento
-Una operación es válida en el sistema si la persona que opera en el mismo consume menos de 100
-Una tarjeta es válida para operar si su fecha de vencimiento es mayor al presente día
+* :godmode:Una tarjeta se identifica de acuerdo a la marca, número de tarjeta, cardholder y fecha de vencimiento
+* :godmode:Una operación es válida en el sistema si la persona que opera en el mismo consume menos de 100
+* :godmode:Una tarjeta es válida para operar si su fecha de vencimiento es mayor al presente día
 Hoy en día, existen tres marcas de tarjeta de crédito, a saber: “SQUA”, “SCO”, “PERE” y es posible que en los siguientes meses existan nuevas marcas. Cada marca tiene un modo de calcular una tasa por el servicio, a saber:
-Tasa SQUA = año / mes
-Tasa SCO    = dia del mes *0.5
-Tasa PERE  = mes*0.1
+* :godmode:Tasa SQUA = año / mes
+* :godmode:Tasa SCO    = dia del mes *0.5
+* :godmode:Tasa PERE  = mes*0.1
 
 
  
@@ -19,11 +19,11 @@ Se deberá dar de alta la tarjeta de crédito para ello deberá insertarse en la
 Los datos de la persona a insertar son id,nombre,apellido,dirección,tarjeta,dni de la tabla personas
  
 Crea los objetos correspondiente que respeten la siguiente funcionalidad.
-       a)                    Invocar un método que devuelva toda la información de una tarjeta
-       b)                    Informar si una operación es valida
-       c)                    Informar si una tarjeta es válida para opera
-       d)                    Identificar si una tarjeta es distinta a otra
-       e)                    Obtener por medio de un método la tasa de una operación informando marca e importe
+     * :godmode:  a)                    Invocar un método que devuelva toda la información de una tarjeta
+     * :godmode: b)                    Informar si una operación es valida
+     * :godmode:  c)                    Informar si una tarjeta es válida para opera
+     * :godmode:  d)                    Identificar si una tarjeta es distinta a otra
+     * :godmode:  e)                    Obtener por medio de un método la tasa de una operación informando marca e importe
 Los datos deben ser cargados por el responsable de cuenta
  
 ### Parte 2
